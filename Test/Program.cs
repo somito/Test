@@ -20,6 +20,8 @@ namespace Test
             Season reg = new Season(2017, 100, 2);
             Context db = new Context();
 
+            db.Database.Delete();
+
             foreach (string link in reg)
             {
                 WebClient client = new WebClient();

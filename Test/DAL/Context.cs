@@ -2,7 +2,7 @@
 
 namespace Test.DAL
 {
-    public class Context: DbContext
+    public class Context:DbContext
     {
         public DbSet<Game> Games { get; set; }
     }

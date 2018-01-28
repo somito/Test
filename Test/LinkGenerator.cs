@@ -4,6 +4,12 @@ using Test.DAL;
 
 namespace Test
 {
+    /// <summary>
+    ///       Generate links for NHL API for each game in (int year, int numOfMatches, int gameType) 
+    ///       year is the starting year of the season, 
+    ///       numOfMatches is as many matches the links will be generated starting from 1
+    ///       gameType is either 1 for pre-season, 2 for regular season, 3 for playoffs
+    /// </summary>
     public class LinkGenerator : IEnumerable
     {
         public int NumOfMatches;

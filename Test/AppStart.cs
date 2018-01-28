@@ -6,8 +6,14 @@ using System.Threading.Tasks;
 
 namespace Test
 {
+    /// <summary>
+    ///       Running the InitDataBasePath method at app start
+    /// </summary>
     public class AppStart
     {
+        /// <summary>
+        ///       Initializes the database path to the current path of the application
+        /// </summary>
         public static void InitDataBasePath()
         {
             string executable = System.Reflection.Assembly.GetExecutingAssembly().Location;

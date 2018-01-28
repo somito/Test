@@ -7,7 +7,7 @@ namespace Test
         static void Main(string[] args)
         {
             AppStart.InitDataBasePath();
-            LinkGenerator linkGen = new LinkGenerator(2016, 10, 2);
+            LinkGenerator linkGen = new LinkGenerator(2016, 20, 2);
             Context db = new Context();
 
             int failedCount = 0;
@@ -23,7 +23,7 @@ namespace Test
                     }
                     continue;
                 }
-                JsonParser.ParseScoringPlays(db);
+                parser.ParseScoringPlays(db);
             }
             db.SaveChanges();
             db.Dispose();

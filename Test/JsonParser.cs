@@ -14,7 +14,7 @@ namespace Test
     /// </summary>
     public class JsonParser
     {
-        private static dynamic Json; //the Json object created from each link
+        private dynamic Json; //the Json object created from each link
         public bool PageNotFound = false;
 
         /// <summary>
@@ -37,7 +37,7 @@ namespace Test
         /// <summary>
         ///       Gets a sequence of IDs of scoring plays from the Json object and adds it to the DB.Context
         /// </summary>
-        public static void ParseScoringPlays(Context db)
+        public void ParseScoringPlays(Context db)
         {
             Game game = new Game();
             game.NHLID = Json.gamePk.ToString();

@@ -14,7 +14,6 @@ namespace Test
         public static void ParseScoringPlays(Context db, LinkGenerator linkGen)
         {
             int failedCount = 0;
-
             foreach (string link in linkGen)
             {
                 WebClient client = new WebClient();
@@ -23,7 +22,6 @@ namespace Test
                 {
                     String htmlCode = client.DownloadString(link);
                     dynamic json = JsonConvert.DeserializeObject<ExpandoObject>(htmlCode, new ExpandoObjectConverter());
-
                     Game game = new Game();
                     game.NHLID = json.gamePk.ToString();
                     string IDs = "";

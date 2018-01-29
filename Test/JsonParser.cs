@@ -5,6 +5,7 @@ using System.Collections.Generic;
 using System.Dynamic;
 using System.Linq;
 using System.Net;
+using System.Text.RegularExpressions;
 using Test.DAL;
 
 namespace Test
@@ -48,6 +49,21 @@ namespace Test
             }
             game.ScoringPlays = IDs;
             db.Games.Add(game);
+
+            String pattern = @"[;]";
+            string[] scoringPlays = Regex.Split(game.ScoringPlays, pattern);
+            foreach (var playNo in scoringPlays)
+            {
+                if (playNo != "")
+                {
+                    Play playToAdd = new Play();
+                    playToAdd.GameID = game.ID;
+                    playToAdd.PlayNo = playNo;
+                    var coordinates = Json.liveData.plays.allPlays[int.Parse(playNo)].coordinates;
+                    playToAdd.Coordinates = coordinates.x + "," + coordinates.y;
+                    db.Plays.Add(playToAdd);
+                }
+            }
         }
     }
 }

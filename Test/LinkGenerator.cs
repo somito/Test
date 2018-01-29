@@ -41,9 +41,10 @@ namespace Test
             {
                 starting = season.Max().Substring(6, 4);
             }
+            int startingId;
 
-            int.TryParse(starting, out int startingfield);
-            Starting = startingfield + 1;
+            int.TryParse(starting, out startingId);
+            Starting = startingId + 1;
 
             db.Dispose();
         }

@@ -58,6 +58,20 @@
     <Compile Include="Game.cs" />
     <Compile Include="JsonParser.cs" />
     <Compile Include="LinkGenerator.cs" />
+    <Compile Include="Migrations\201801271202371_InitialCreate.cs" />
+    <Compile Include="Migrations\201801271202371_InitialCreate.Designer.cs">
+      <DependentUpon>201801271202371_InitialCreate.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201801291838278_InitialDatabase.cs" />
+    <Compile Include="Migrations\201801291838278_InitialDatabase.Designer.cs">
+      <DependentUpon>201801291838278_InitialDatabase.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201801291957447_namechange.cs" />
+    <Compile Include="Migrations\201801291957447_namechange.Designer.cs">
+      <DependentUpon>201801291957447_namechange.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\Configuration.cs" />
+    <Compile Include="Play.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -66,6 +80,17 @@
       <SubType>Designer</SubType>
     </None>
     <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\201801271202371_InitialCreate.resx">
+      <DependentUpon>201801271202371_InitialCreate.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201801291838278_InitialDatabase.resx">
+      <DependentUpon>201801291838278_InitialDatabase.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201801291957447_namechange.resx">
+      <DependentUpon>201801291957447_namechange.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

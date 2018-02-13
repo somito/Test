@@ -63,8 +63,8 @@ namespace Test
                     var coordinates = Json.liveData.plays.allPlays[int.Parse(playNo)].coordinates;
                     playToAdd.Coordinates = coordinates.x + "," + coordinates.y;
                     db.Plays.Add(playToAdd);
-                    db.SaveChanges();
                 }
+                db.SaveChanges();
             }
         }
     }

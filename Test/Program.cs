@@ -7,7 +7,7 @@ namespace Test
         static void Main(string[] args)
         {
             AppStart.InitDataBasePath();
-            LinkGenerator linkGen = new LinkGenerator(2017, 200, 2);
+            LinkGenerator linkGen = new LinkGenerator(2017, 210, 2);
             using (Context db = new Context())
             {
                 int failedCount = 0;

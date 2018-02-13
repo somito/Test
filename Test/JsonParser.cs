@@ -49,6 +49,7 @@ namespace Test
             }
             game.ScoringPlays = IDs;
             db.Games.Add(game);
+            db.SaveChanges();
 
             String pattern = @"[;]";
             string[] scoringPlays = Regex.Split(game.ScoringPlays, pattern);
@@ -62,6 +63,7 @@ namespace Test
                     var coordinates = Json.liveData.plays.allPlays[int.Parse(playNo)].coordinates;
                     playToAdd.Coordinates = coordinates.x + "," + coordinates.y;
                     db.Plays.Add(playToAdd);
+                    db.SaveChanges();
                 }
             }
         }

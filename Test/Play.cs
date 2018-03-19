@@ -12,5 +12,7 @@ namespace Test
         public int GameID { get; set; }
         public string PlayNo { get; set; }
         public string Coordinates { get; set; }
+        public string ScorerID { get; set; }
+        public string GolieID { get; set; }
     }
 }

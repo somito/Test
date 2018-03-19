@@ -70,6 +70,10 @@
     <Compile Include="Migrations\201801291957447_namechange.Designer.cs">
       <DependentUpon>201801291957447_namechange.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201803121953381_ScorerGolie.cs" />
+    <Compile Include="Migrations\201803121953381_ScorerGolie.Designer.cs">
+      <DependentUpon>201803121953381_ScorerGolie.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Play.cs" />
     <Compile Include="Program.cs" />
@@ -90,6 +94,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201801291957447_namechange.resx">
       <DependentUpon>201801291957447_namechange.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201803121953381_ScorerGolie.resx">
+      <DependentUpon>201803121953381_ScorerGolie.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

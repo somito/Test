@@ -62,6 +62,12 @@ namespace Test
                     playToAdd.PlayNo = playNo;
                     var coordinates = Json.liveData.plays.allPlays[int.Parse(playNo)].coordinates;
                     playToAdd.Coordinates = coordinates.x + "," + coordinates.y;
+
+                    var scorerID = Json.liveData.plays.allPlays[int.Parse(playNo)].players[0].player.id;
+                    //var golieID = Json.liveData.plays.allPlays[int.Parse(playNo)].players[3].player.id;
+
+                    playToAdd.ScorerID = scorerID.ToString();
+                    //playToAdd.GolieID = golieID.ToString();
                     db.Plays.Add(playToAdd);
                 }
                 db.SaveChanges();

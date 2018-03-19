@@ -63,10 +63,26 @@ namespace Test
                     var coordinates = Json.liveData.plays.allPlays[int.Parse(playNo)].coordinates;
                     playToAdd.Coordinates = coordinates.x + "," + coordinates.y;
 
-                    var scorerID = Json.liveData.plays.allPlays[int.Parse(playNo)].players[0].player.id;
-                    //var golieID = Json.liveData.plays.allPlays[int.Parse(playNo)].players[3].player.id;
+                    var playerList = Json.liveData.plays.allPlays[int.Parse(playNo)].players;
 
-                    playToAdd.ScorerID = scorerID.ToString();
+                    foreach (var player in playerList)
+                    {
+                        if (player.playerType == "Scorer")
+                        {
+                            var scorerID = player.player.id;
+                            playToAdd.ScorerID = scorerID.ToString();
+                        }
+
+                        if (player.playerType == "Goalie")
+                        {
+                            var golieID = player.player.id;
+                            playToAdd.GolieID = golieID.ToString();
+                        }
+                    }
+                    //var scorerID = Json.liveData.plays.allPlays[int.Parse(playNo)].players[0].player.id;
+                    //var golieID = Json.liveData.plays.allPlays[int.Parse(playNo)].players[lastItemIndex - 1].player.id;
+
+                    //playToAdd.ScorerID = scorerID.ToString();
                     //playToAdd.GolieID = golieID.ToString();
                     db.Plays.Add(playToAdd);
                 }

@@ -7,26 +7,26 @@ namespace Test
         static void Main(string[] args)
         {
             AppStart.InitDataBasePath();
-            LinkGenerator linkGen = new LinkGenerator(2016, 10, 2);
-            Context db = new Context();
-
-            int failedCount = 0;
-            foreach (string link in linkGen)
+            LinkGenerator linkGen = new LinkGenerator(2017, 224, 2);
+            using (Context db = new Context())
             {
-                JsonParser parser = new JsonParser(link);
-                if (parser.PageNotFound)
+                int failedCount = 0;
+                foreach (string link in linkGen)
                 {
-                    failedCount += 1;
-                    if (failedCount == 2)
+                    JsonParser parser = new JsonParser(link);
+                    if (parser.PageNotFound)
                     {
-                        break;
+                        failedCount += 1;
+                        if (failedCount == 2)
+                        {
+                            break;
+                        }
+                        continue;
                     }
-                    continue;
+                    parser.ParseScoringPlays(db);
                 }
-                JsonParser.ParseScoringPlays(db);
+                db.SaveChanges();
             }
-            db.SaveChanges();
-            db.Dispose();
         }
     }
 }
